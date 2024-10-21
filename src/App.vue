@@ -1,13 +1,5 @@
 <script lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import Introduction from './components/Introduction.vue'
-import TitleVue from './components/Title.vue'
 export default {
-  components: {
-    HelloWorld,
-    Introduction,
-    TitleVue,
-  },
   data() {
     return {
       message: 'Kenny',
@@ -20,26 +12,14 @@ export default {
 </script>
 <template>
   <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="./assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+    <nav>
+      <RouterLink to="/">Inicio</RouterLink>
+      <RouterLink to="/introduction">Introducción</RouterLink>
+    </nav>
   </header>
-  <br />
+
   <main>
-    <div>
-      {{ message }}
-      {{ counter.count }}
-    </div>
-    <Introduction />
-    <TitleVue :msg="message" />
+    <RouterView />
   </main>
 </template>
 
