@@ -14,12 +14,15 @@ export default {
       const res = await fetch(`https://rickandmortyapi.com/api/character`).then(
         data => data.json(),
       )
-      console.log(res)
       this.RickAndMortyCharacters = res.results
     },
   },
   mounted() {
+    console.log(`El componente esta montado`)
     this.fetchData()
+  },
+  updated() {
+    console.log(`El componente esta actualizado`)
   },
   watch: {
     todoId() {
@@ -32,11 +35,14 @@ export default {
   <section class="mt-5">
     <h3 class="text-center font-semibold tracking-wide">Mas vistos</h3>
   </section>
-  <section
-    class="flex justify-center mt-5 gap-4 flex-wrap"
-    v-for="characters in RickAndMortyCharacters"
-    :key="characters.id"
-  >
-    <CardComponent name="characters.name" url="characters.name" />
+  <section class="flex justify-center mt-5 gap-4 flex-wrap py-5">
+    <CardComponent
+      v-for="character in RickAndMortyCharacters"
+      :key="character.id"
+      :name="character.name"
+      :url="character.image"
+      :specie="character.species"
+      :gender="character.gender"
+    />
   </section>
 </template>

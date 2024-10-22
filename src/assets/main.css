@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.rick-morty-bg {
+  background-image: url('/public/rick-morty-wallpaper.jpg');
+  object-fit: cover;
+  min-height: 100vh;
+}
