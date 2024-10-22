@@ -11,10 +11,13 @@ export default {
 }
 </script>
 <template>
-  <header>
-    <nav>
-      <RouterLink to="/">Inicio</RouterLink>
-      <RouterLink to="/introduction">Introducción</RouterLink>
+  <header class="w-full bg-blue-500 p-3">
+    <p class="font-bold bg-white rounded-xl px-2">RICK AND MORTY APP</p>
+    <nav class="ml-5">
+      <RouterLink to="/" class="ml-5 text-white">Inicio</RouterLink>
+      <RouterLink to="/introduction" class="ml-5 text-white"
+        >Introducción</RouterLink
+      >
     </nav>
   </header>
 
