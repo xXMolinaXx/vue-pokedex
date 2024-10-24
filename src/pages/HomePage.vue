@@ -39,6 +39,7 @@ export default {
     <CardComponent
       v-for="character in RickAndMortyCharacters"
       :key="character.id"
+      :id="character.id"
       :name="character.name"
       :url="character.image"
       :specie="character.species"

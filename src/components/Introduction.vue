@@ -3,7 +3,7 @@ let id = 0
 export default {
   data() {
     return {
-      titleClass: 'title editable',
+      titleClass: 'titulo editado por referencia',
       count: 0,
       text: '',
       awesome: true,
@@ -13,7 +13,7 @@ export default {
         { id: id++, text: 'Learn Vue', done: false },
       ],
       hideCompleted: false,
-      todoId: 5,
+      todoId: 0,
       todoData: null,
     }
   },
@@ -67,33 +67,77 @@ export default {
 }
 </script>
 <template>
-  <h1 :class="titleClass">Make me red</h1>
-  <button @click="increment">Count is: {{ count }}</button>
-  <input :value="text" @input="onInput" />
-  <input v-model="text" />
-  <button @click="toggle">Toggle</button>
-  <h1 v-if="awesome">Vue is awesome!</h1>
-  <h1 v-else>Oh no 😢</h1>
-  <form @submit.prevent="addTodo">
-    <input v-model="newTodo" required placeholder="new todo" />
-    <button>Add Todo</button>
-  </form>
-  <ul>
-    <li v-for="todo in filteredTodos" :key="todo.id">
-      <input type="checkbox" v-model="todo.done" />
-      <span :class="{ done: todo.done }">{{ todo.text }}</span>
-      <button @click="removeTodo(todo)">X</button>
-    </li>
-  </ul>
-  <button @click="hideCompleted = !hideCompleted">
-    {{ hideCompleted ? 'Show all' : 'Hide completed' }}
-  </button>
-  <h2 ref="pElementRef">Hello</h2>
+  <div class="text-white p-5 flex justify-center">
+    <div>
+      <h2 class="text-center font-semibold text-xl">
+        CONCEPTOS BASICO DE VUEJS
+      </h2>
+      <section class="my-3 border-b-4 pb-2">
+        <h1 :class="titleClass">Make me red</h1>
+      </section>
+      <section class="my-3 border-b-4 pb-2">
+        <button @click="increment">Count is: {{ count }}</button>
+      </section>
+      <section class="my-3 border-b-4 pb-2">
+        <p>
+          Input eventos: dos formas de controlar los eventos de cambio de texto
+        </p>
+        <input class="text-black" :value="text" @input="onInput" />
+        <br />
+        <br />
+        <input class="text-black" v-model="text" />
+      </section>
+      <section class="my-3 border-b-4 pb-2">
+        <button
+          @click="toggle"
+          class="rounded bg-white text-black p-2 m-2 text-base font-medium border-gray-300 hover:bg-gray-400 hover:w-28 hover:h-12"
+        >
+          {{ awesome ? 'Mostrar' : 'Desmostrar' }}
+        </button>
+        <h1 v-if="awesome">Vue is awesome!</h1>
+        <h1 v-else>Oh no 😢</h1>
+      </section>
 
-  <p>Todo id: {{ todoId }}</p>
-  <button @click="updateState" :disabled="!todoData">Fetch next todo</button>
-  <p v-if="!todoData">Loading...</p>
-  <pre v-else>{{ todoData }}</pre>
+      <form @submit.prevent="addTodo">
+        <input
+          class="text-black"
+          v-model="newTodo"
+          required
+          placeholder="new todo"
+        />
+        <button
+          class="rounded bg-white text-black p-2 m-2 text-base font-medium border-gray-300 hover:bg-gray-400"
+        >
+          Agregar tarea
+        </button>
+      </form>
+      <ul>
+        <li v-for="todo in filteredTodos" :key="todo.id">
+          <input type="checkbox" v-model="todo.done" />
+          <span :class="{ done: todo.done }">{{ todo.text }}</span>
+          <button @click="removeTodo(todo)">X</button>
+        </li>
+      </ul>
+      <button
+        @click="hideCompleted = !hideCompleted"
+        class="rounded bg-white text-black p-2 m-2 text-base font-medium border-gray-300 hover:bg-gray-400"
+      >
+        {{ hideCompleted ? 'Show all' : 'Hide completed' }}
+      </button>
+      <h2 ref="pElementRef" class="text-xl font-medium">Hello</h2>
+
+      <p>Todo id: {{ todoId }}</p>
+      <button
+        class="rounded bg-white text-black p-2 m-2 text-base font-medium border-gray-300 hover:bg-gray-400"
+        @click="updateState"
+        :disabled="!todoData"
+      >
+        Fetch next todo
+      </button>
+      <p v-if="!todoData">Loading...</p>
+      <pre v-else>{{ todoData }}</pre>
+    </div>
+  </div>
 </template>
 
 <style>

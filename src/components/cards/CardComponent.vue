@@ -5,10 +5,11 @@ export default {
     url: String,
     specie: String,
     gender: String,
+    id: String,
   },
   methods: {
-    goToAbout() {
-      this.$router.push('/introduction')
+    goToAbout(id: string | undefined) {
+      this.$router.push(`/character/${id}`)
     },
   },
 }
@@ -16,7 +17,7 @@ export default {
 <template>
   <div
     class="rounded shadow-lg border-2 w-72 h-96 py-5 px-1 bg-white"
-    @click="goToAbout()"
+    @click="goToAbout(id)"
   >
     <div class="flex justify-center">
       <img
