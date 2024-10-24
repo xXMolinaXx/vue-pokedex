@@ -5,6 +5,7 @@ import MainLayout from './components/layout/MainLayout.vue'
 import App from './App.vue'
 import HomePage from './pages/HomePage.vue'
 import AboutUser from './pages/AboutUser.vue'
+import FormularioPage from './pages/FormlarioPage.vue'
 import './assets/main.css'
 
 
@@ -25,6 +26,10 @@ const routes = [
       {
         path: '/character/:id',
         component: AboutUser,
+      },
+      {
+        path: 'formulario',
+        component: FormularioPage,
       }
     ]
   },
