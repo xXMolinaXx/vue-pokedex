@@ -46,4 +46,16 @@ export default {
       :gender="character.gender"
     />
   </section>
+  <div class="flex justify-center pb-5">
+    <div class="pagination">
+      <a href="#" class="disabled">&laquo;</a>
+      <a href="#">1</a>
+      <a href="#" class="active">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">6</a>
+      <a href="#">&raquo;</a>
+    </div>
+  </div>
 </template>

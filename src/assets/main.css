@@ -7,3 +7,44 @@
   object-fit: scale-down;
   min-height: 100vh;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin: 0 4px;
+  border: 1px solid #ddd;
+}
+
+.pagination a:hover {
+  background-color: #ddd;
+}
+
+.pagination a.active {
+  background-color: #ffffff;
+  color: black;
+}
+
+.pagination a.disabled {
+  pointer-events: none;
+  background-color: #f1f1f1;
+  color: #ccc;
+  border: 1px solid #ddd;
+}
